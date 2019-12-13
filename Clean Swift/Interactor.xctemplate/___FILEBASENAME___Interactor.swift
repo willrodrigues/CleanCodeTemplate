@@ -18,8 +18,13 @@ protocol ___VARIABLE_sceneName___DataStore {
 
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    var worker = ___VARIABLE_sceneName___Worker()
+    let worker: ___VARIABLE_sceneName___Worker
     //var name: String = ""
+    
+    // MARK: Init
+    init(worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
+        self.worker = worker
+    }
     
     // MARK: Do something
     
