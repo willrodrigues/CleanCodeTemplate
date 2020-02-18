@@ -13,13 +13,20 @@ protocol ___VARIABLE_sceneName___DisplayLogic: class {
 }
 
 class ___VARIABLE_sceneName___ViewController: UITableViewController, ___VARIABLE_sceneName___DisplayLogic {
+    
+    // MARK: Interactor Objects
     var interactor: ___VARIABLE_sceneName___BusinessLogic?
     var router: (NSObjectProtocol & ___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
     
-    // MARK: Object lifecycle
+    // MARK: - Outlets
+    //@IBOutlet weak var nameTextField: UITextField!
+    
+    // MARK: ViewController lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        let nibName = nibNameOrNil ?? "___VARIABLE_sceneName___View"
+        let bundle = nibBundleOrNil ?? Bundle.main
+        super.init(nibName: nibName, bundle: bundle)
         setup()
     }
     
@@ -46,13 +53,8 @@ class ___VARIABLE_sceneName___ViewController: UITableViewController, ___VARIABLE
     
     // MARK: Routing
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
+    private func goToSomewhere() {
+        router?.routeToSomewhere()
     }
     
     // MARK: View lifecycle
@@ -63,8 +65,6 @@ class ___VARIABLE_sceneName___ViewController: UITableViewController, ___VARIABLE
     }
     
     // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
     
     func doSomething() {
         let request = ___VARIABLE_sceneName___.Model.Request()
