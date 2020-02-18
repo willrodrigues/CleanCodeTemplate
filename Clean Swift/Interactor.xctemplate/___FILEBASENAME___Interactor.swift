@@ -17,8 +17,12 @@ protocol ___VARIABLE_sceneName___DataStore {
 }
 
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
+    
+    // MARK: Archtecture Objects
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
     let worker: ___VARIABLE_sceneName___Worker
+    
+    //MARK: - DataStore Objects
     //var name: String = ""
     
     // MARK: Init

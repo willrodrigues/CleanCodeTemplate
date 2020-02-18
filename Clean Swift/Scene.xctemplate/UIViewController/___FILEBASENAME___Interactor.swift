@@ -17,15 +17,23 @@ protocol ___VARIABLE_sceneName___DataStore {
 }
 
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
+    
+    // MARK: Archtecture Objects
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    var worker: ___VARIABLE_sceneName___Worker?
+    let worker: ___VARIABLE_sceneName___Worker
+    
+    //MARK: - DataStore Objects
     //var name: String = ""
+    
+    // MARK: Init
+    init(worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
+        self.worker = worker
+    }
     
     // MARK: Do something
     
     func doSomething(request: ___VARIABLE_sceneName___.Model.Request) {
-        worker = ___VARIABLE_sceneName___Worker()
-        worker?.doSomeWork()
+        worker.doSomeWork()
         
         let response = ___VARIABLE_sceneName___.Model.Response()
         presenter?.presentSomething(response: response)
