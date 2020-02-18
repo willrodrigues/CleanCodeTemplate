@@ -19,18 +19,21 @@ protocol ___VARIABLE_sceneName___DataStore {
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
     
     // MARK: Archtecture Objects
+    
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
     let worker: ___VARIABLE_sceneName___Worker
     
     //MARK: - DataStore Objects
+    
     //var name: String = ""
     
     // MARK: Init
+    
     init(worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
         self.worker = worker
     }
     
-    // MARK: Do something
+    // MARK: Functions
     
     func doSomething(request: ___VARIABLE_sceneName___.Model.Request) {
         worker.doSomeWork()

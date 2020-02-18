@@ -13,6 +13,9 @@ protocol ___VARIABLE_sceneName___PresentationLogic {
 }
 
 class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresentationLogic {
+    
+    // MARK: Archtecture Objects
+    
     weak var viewController: ___VARIABLE_sceneName___DisplayLogic?
     
     // MARK: Do something

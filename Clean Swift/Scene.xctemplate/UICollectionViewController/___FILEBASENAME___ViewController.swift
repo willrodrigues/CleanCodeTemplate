@@ -15,10 +15,12 @@ protocol ___VARIABLE_sceneName___DisplayLogic: class {
 class ___VARIABLE_sceneName___ViewController: UICollectionViewController, ___VARIABLE_sceneName___DisplayLogic {
     
     // MARK: Archtecture Objects
+    
     var interactor: ___VARIABLE_sceneName___BusinessLogic?
     var router: (NSObjectProtocol & ___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
     
     // MARK: - Outlets
+    
     //@IBOutlet weak var nameTextField: UITextField!
     
     // MARK: ViewController lifecycle
@@ -64,7 +66,7 @@ class ___VARIABLE_sceneName___ViewController: UICollectionViewController, ___VAR
         doSomething()
     }
     
-    // MARK: Do something
+    // MARK: Functions
     
     func doSomething() {
         let request = ___VARIABLE_sceneName___.Model.Request()
