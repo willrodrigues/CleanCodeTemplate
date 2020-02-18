@@ -30,7 +30,7 @@ class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic,
         self.worker = worker
     }
     
-    // MARK: Do something
+    // MARK: Functions
     
     func doSomething(request: ___VARIABLE_sceneName___.Model.Request) {
         worker.doSomeWork()

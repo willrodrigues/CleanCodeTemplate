@@ -64,7 +64,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         doSomething()
     }
     
-    // MARK: Do something
+    // MARK: Functions
     
     func doSomething() {
         let request = ___VARIABLE_sceneName___.Model.Request()
