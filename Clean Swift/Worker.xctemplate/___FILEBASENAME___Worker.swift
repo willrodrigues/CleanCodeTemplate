@@ -9,8 +9,5 @@
 import UIKit
 
 class ___VARIABLE_sceneName___Worker {
-    
-    // MARK: Functions
-    
     func doSomeWork() {}
 }

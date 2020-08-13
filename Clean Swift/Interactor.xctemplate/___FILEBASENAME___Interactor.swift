@@ -18,7 +18,7 @@ protocol ___VARIABLE_sceneName___DataStore {
 
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
     
-    // MARK: Archtecture Objects
+    // MARK: - Archtecture Objects
     
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
     let worker: ___VARIABLE_sceneName___Worker
@@ -27,12 +27,13 @@ class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic,
     
     //var name: String = ""
     
-    // MARK: Init
+    // MARK: - Interactor Lifecycle
+    
     init(worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
         self.worker = worker
     }
     
-    // MARK: Functions
+    // MARK: - Business Logic
     
     func doSomething(request: ___VARIABLE_sceneName___.Model.Request) {
         worker.doSomeWork()

@@ -14,21 +14,15 @@ protocol ___VARIABLE_sceneName___DisplayLogic: class {
 
 class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
     
-    // MARK: Archtecture Objects
+    // MARK: - Archtecture Objects
     
     var interactor: ___VARIABLE_sceneName___BusinessLogic?
     var router: (NSObjectProtocol & ___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
     
-    // MARK: - Outlets
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    // MARK: ViewController lifecycle
+    // MARK: - ViewController Lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        let nibName = nibNameOrNil ?? "___VARIABLE_sceneName___View"
-        let bundle = nibBundleOrNil ?? Bundle.main
-        super.init(nibName: nibName, bundle: bundle)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
     
@@ -37,7 +31,14 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         setup()
     }
     
-    // MARK: Setup
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addComponents()
+        addComponentsConstraints()
+        loadScreenValues()
+    }
+    
+    // MARK: - Setup
     
     private func setup() {
         let viewController = self
@@ -53,25 +54,20 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         router.dataStore = interactor
     }
     
-    // MARK: Routing
+    // MARK: - Private Functions
     
-    private func goToSomewhere() {
-        router?.routeToSomewhere()
-    }
-    
-    // MARK: View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        doSomething()
-    }
-    
-    // MARK: Functions
-    
-    func doSomething() {
+    private func loadScreenValues() {
         let request = ___VARIABLE_sceneName___.Model.Request()
         interactor?.doSomething(request: request)
     }
+    
+    // MARK: - Layout Functions
+    
+    private func addComponents() {}
+    
+    private func addComponentsConstraints() {}
+    
+    // MARK: - Display Logic
     
     func displaySomething(viewModel: ___VARIABLE_sceneName___.Model.ViewModel) {
         //nameTextField.text = viewModel.name

@@ -18,12 +18,12 @@ protocol ___VARIABLE_sceneName___DataPassing {
 
 class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingLogic, ___VARIABLE_sceneName___DataPassing {
     
-    // MARK: Archtecture Objects
+    // MARK: - Archtecture Objects
     
     weak var viewController: ___VARIABLE_sceneName___ViewController?
     var dataStore: ___VARIABLE_sceneName___DataStore?
     
-    // MARK: Routing
+    // MARK: - Routing Logic
     
     func routeToSomewhere() {
         //let nextController = NextViewController()
@@ -32,7 +32,7 @@ class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingL
         //viewController?.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
-    // MARK: Passing data
+    // MARK: - Passing data
     
     //func passDataToSomewhere(source: ___VARIABLE_sceneName___DataStore, destination: inout SomewhereDataStore) {
         //destination.name = source.name
