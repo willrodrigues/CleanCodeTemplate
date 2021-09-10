@@ -12,7 +12,7 @@ protocol ___VARIABLE_sceneName___BusinessLogic {
 }
 
 protocol ___VARIABLE_sceneName___DataStore {
-    //var name: String { get set }
+    // var name: String { get set }
 }
 
 final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
@@ -22,9 +22,9 @@ final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___Business
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
     let worker: ___VARIABLE_sceneName___WorkerLogic
     
-    //MARK: - DataStore Objects
+    // MARK: - DataStore Objects
     
-    //var name: String = ""
+    // var name: String = ""
     
     // MARK: - Interactor Lifecycle
     
