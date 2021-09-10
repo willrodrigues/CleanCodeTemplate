@@ -3,25 +3,24 @@
 //  ___PROJECTNAME___
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 
 protocol ___VARIABLE_sceneName___BusinessLogic {
-    func doSomething(request: ___VARIABLE_sceneName___.Model.Request)
+    func loadScreenValues()
 }
 
 protocol ___VARIABLE_sceneName___DataStore {
     //var name: String { get set }
 }
 
-class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
+final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
     
     // MARK: - Archtecture Objects
     
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    let worker: ___VARIABLE_sceneName___Worker
+    let worker: ___VARIABLE_sceneName___WorkerLogic
     
     //MARK: - DataStore Objects
     
@@ -29,16 +28,13 @@ class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic,
     
     // MARK: - Interactor Lifecycle
     
-    init(worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
+    init(worker: ___VARIABLE_sceneName___WorkerLogic = ___VARIABLE_sceneName___Worker()) {
         self.worker = worker
     }
     
     // MARK: - Business Logic
     
-    func doSomething(request: ___VARIABLE_sceneName___.Model.Request) {
-        worker.doSomeWork()
-        
-        let response = ___VARIABLE_sceneName___.Model.Response()
-        presenter?.presentSomething(response: response)
+    func loadScreenValues() {
+        presenter?.presentScreenValues()
     }
 }

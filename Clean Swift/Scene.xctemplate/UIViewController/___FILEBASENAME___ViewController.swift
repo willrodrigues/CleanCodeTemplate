@@ -3,16 +3,15 @@
 //  ___PROJECTNAME___
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 
-protocol ___VARIABLE_sceneName___DisplayLogic: class {
-    func displaySomething(viewModel: ___VARIABLE_sceneName___.Model.ViewModel)
+protocol ___VARIABLE_sceneName___DisplayLogic: AnyObject {
+    func displayScreenValues(viewModel: ___VARIABLE_sceneName___.Model.ViewModel)
 }
 
-class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
+final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
     
     // MARK: - Archtecture Objects
     
@@ -57,8 +56,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     // MARK: - Private Functions
     
     private func loadScreenValues() {
-        let request = ___VARIABLE_sceneName___.Model.Request()
-        interactor?.doSomething(request: request)
+        interactor?.loadScreenValues()
     }
     
     // MARK: - Layout Functions
@@ -69,7 +67,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     
     // MARK: - Display Logic
     
-    func displaySomething(viewModel: ___VARIABLE_sceneName___.Model.ViewModel) {
+    func displayScreenValues(viewModel: ___VARIABLE_sceneName___.Model.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }
